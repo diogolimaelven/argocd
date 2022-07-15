@@ -1,0 +1,7 @@
+apiVersion: v1
+name: meuchart
+version: v1.0
+description: Meu primeiro chart com o Helm
+maintainers: 
+  - name: Fulano de tal
+    email: meuemail@example.com
