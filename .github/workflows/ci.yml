@@ -17,10 +17,10 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     
-    - name: Update Image Version in the related HelmChart values.yaml
+    - name: update Image Version in the related HelmChart values.yaml
       uses: fjogeleit/yaml-update-action@main
       with:
-        branch: main
+        branch: master
         valueFile: 'meu-chart/values.yaml'
         propertyPath: 'image.tag'
         value: my-image-name:$(date +%s)
