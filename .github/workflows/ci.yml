@@ -23,7 +23,7 @@ jobs:
         branch: main
         valueFile: 'meu-chart/values.yaml'
         propertyPath: 'image.tag'
-        value: 1.0
+        value: my-image-name:$(date +%s)
         commitChange: true
         updateFile: true
         message: "consegui"
