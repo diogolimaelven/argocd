@@ -14,8 +14,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Get Time
+      id: time
+      uses: nanzm/get-time-action@v1.1
+      with:
+        timeZone: 8
+        format: 'YYYY-MM-DD-HH-mm-ss'  
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      id: build-image
+      env:
+        IMAGE_TAG: dev-${{ steps.time.outputs.time }}-${{ github.sha }}
+      run: docker build . --file Dockerfile --tag didis:$IMAGE_TAG
+    
+    
     
     - name: update Image Version in the related HelmChart values.yaml
       uses: fjogeleit/yaml-update-action@main
@@ -23,7 +36,7 @@ jobs:
         branch: master
         valueFile: 'meu-chart/values.yaml'
         propertyPath: 'image.tag'
-        value: my-image-name:$(date +%s)
+        value: didis:$IMAGE_TAG
         commitChange: true
         updateFile: true
         message: "consegui"
