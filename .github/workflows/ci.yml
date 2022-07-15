@@ -28,10 +28,10 @@ jobs:
         IMAGE_TAG: dev-${{ steps.time.outputs.time }}-${{ github.sha }}
       run: docker build . --file Dockerfile --tag didis:$IMAGE_TAG
     
-    
-    
     - name: update Image Version in the related HelmChart values.yaml
       uses: fjogeleit/yaml-update-action@main
+      env:
+        IMAGE_TAG: dev-${{ steps.time.outputs.time }}-${{ github.sha }}
       with:
         branch: master
         valueFile: 'meu-chart/values.yaml'
