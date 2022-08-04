@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ steps.time.outputs.time }}
+          tags: 3.0
 
 
 
