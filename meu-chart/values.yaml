@@ -1,3 +1,3 @@
 image:
   repository: didis/app
-  tag: didis:$IMAGE_TAG
+  tag: '52.57'
