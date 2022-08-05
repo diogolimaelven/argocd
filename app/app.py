@@ -1,5 +1,3 @@
-import os
-import psycopg
 from flask import Flask, render_template, request
 from prometheus_flask_exporter import PrometheusMetrics
 
