@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: "didis/app:30.16"
         ports:
         - containerPort: 5000
