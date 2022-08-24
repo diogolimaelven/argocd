@@ -10,4 +10,4 @@ def hello_world():
     return "App fabs"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3003, debug = False)
+    app.run(host='0.0.0.0',debug = False)
