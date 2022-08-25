@@ -7,7 +7,7 @@ metrics = PrometheusMetrics(app)
 @app.route("/")
 def hello_world():
 
-    return "App lab 25-08-22"
+    return "App lab 25-08-22 V2"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug = False)
