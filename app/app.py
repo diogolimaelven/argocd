@@ -9,5 +9,16 @@ def hello_world():
 
     return "App lab 25-08-22 V2"
 
+@app.route("/cadastro")
+def cadastro():
+
+    return "cadastro"
+
+@app.route("/produto")
+def produto():
+
+    return "produto"
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug = False)
