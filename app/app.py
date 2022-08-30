@@ -7,7 +7,7 @@ metrics = PrometheusMetrics(app)
 @app.route("/")
 def hello_world():
 
-    return "Turma Bootcamp da massa"
+    return "Turma Bootcamp da massa com mais replicas"
 
 @app.route("/cadastro")
 def cadastro():
