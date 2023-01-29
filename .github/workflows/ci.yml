@@ -56,7 +56,7 @@ jobs:
     - name: Commit and push changes to deployment repository
       uses: ad-m/github-push-action@master
       with:
-        repository: charts_deploy
+        repository: diogolimaelven/charts_deploy
         branch: main
         message: "Update image to version  ${{ steps.time.outputs.time }}"
         files: |
