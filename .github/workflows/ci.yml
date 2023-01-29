@@ -53,14 +53,14 @@ jobs:
         updateFile: true
         message: "deploy .."
 
-    - name: Commit and push changes to deployment repository
-      uses: ad-m/github-push-action@master
-      with:
-        repository: diogolimaelven/charts_deploy
-        branch: main
-        message: "Update image to version  ${{ steps.time.outputs.time }}"
-        files: |
-          meu-chart/values.yaml
+    # - name: Commit and push changes to deployment repository
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     repository: diogolimaelven/charts_deploy
+    #     branch: main
+    #     message: "Update image to version  ${{ steps.time.outputs.time }}"
+    #     files: |
+    #       meu-chart/values.yaml
 
 
 
