@@ -54,7 +54,7 @@ jobs:
         message: "deploy .."
 
     - name: Commit and push changes to deployment repository
-      uses: ad-m/github-push-action@v0.4.0
+      uses: ad-m/github-push-action@master
       with:
         repository: charts_deploy
         branch: main
