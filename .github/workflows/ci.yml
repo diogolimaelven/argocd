@@ -42,8 +42,8 @@ jobs:
     - name: Update Version
       run: |
         git_hash=$(git rev-parse --short "$GITHUB_SHA")
-        version=$(cat ./meu-chart/values.yaml | grep version: | awk '{print $2}')
-        sed -i "s/$version/${GITHUB_REF##*/}-$git_hash/" ./meu-chart/values.yaml
+        version=$(cat ./values.yaml | grep version: | awk '{print $2}')
+        sed -i "s/$version/${GITHUB_REF##*/}-$git_hash/" ./values.yaml
 
     # - name: Commit and push changes
     #   uses: devops-infra/action-commit-push@v0.3
