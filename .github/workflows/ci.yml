@@ -45,6 +45,18 @@ jobs:
         version=$(cat ./meu-chart/values.yaml | grep tag: | awk '{print $2}')
         sed -i "s/$version/${GITHUB_REF##*/}-$git_hash/" ./meu-chart/values.yaml
 
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.TOKEN }}
+      with:
+        source_file: 'values.yaml'
+        destination_repo: 'diogolimaelven/charts_deploy'
+        destination_folder: 'meu-chart'
+        user_email: 'diogo@elven.works'
+        user_name: 'diogolimaelven'
+        commit_message: 'A custom message for the commit'
+
     - name: Commit and push changes
       uses: devops-infra/action-commit-push@v0.3
       with:
