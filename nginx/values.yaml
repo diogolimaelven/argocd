@@ -1,0 +1,8 @@
+name:
+  app: nginx
+  label: nginx
+
+image:
+  repository: nginx
+  tag: '1.16.1'
+  containerPort: 80
