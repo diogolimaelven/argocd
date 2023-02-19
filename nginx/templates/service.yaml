@@ -7,6 +7,6 @@ spec:
     app: "{{ .Values.name.label }}"
   ports:
   - protocol: TCP
-    port: "{{ .Values.image.containerPort }}"
+    port: 80
 
   type: LoadBalancer
