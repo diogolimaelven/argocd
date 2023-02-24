@@ -12,10 +12,20 @@ spec:
   template:
     metadata:
       labels:
-        app: "{{ .Values.name.app }}"
+        app: "{{ .Values.name.label }}"
     spec:
       containers:
       - name: "{{ .Values.name.app }}"
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "55M"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+        - name: ENVVARNAME
+          value: ENVVARVALUE
         ports:
         - containerPort: 80
