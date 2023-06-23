@@ -7,7 +7,7 @@ metrics = PrometheusMetrics(app)
 @app.route("/")
 def hello_world():
 
-    return "gg du bom!"
+    return "teste caramelo e siajo"
 
 @app.route("/cadastro")
 def cadastro():
