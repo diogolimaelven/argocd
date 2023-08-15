@@ -2,7 +2,7 @@ name: ci
 on:
   push:
     branches:
-    - 'master'
+    - 'aula-formacao'
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -35,14 +35,14 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/app:${{ steps.time.outputs.time }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/aula-formacao:${{ steps.time.outputs.time }}
 
 
 
     - name: update Image Version in the related HelmChart values.yaml
       uses: fjogeleit/yaml-update-action@main
       with:
-        branch: master
+        branch: 'aula-formacao'
         valueFile: 'meu-chart/values.yaml'
         propertyPath: 'image.tag'
         value: ${{ steps.time.outputs.time }}

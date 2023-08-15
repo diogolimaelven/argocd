@@ -1,3 +1,3 @@
 image:
-  repository: didis/app
-  tag: '11.38'
+  repository: bilcatti/aula-formacao
+  tag: '1.1.1'
