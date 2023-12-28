@@ -20,7 +20,7 @@ spec:
           ports:
             - containerPort: 5000
           env:
-            - name: segredo
+            - name: usuario
               valueFrom:
                 secretKeyRef:
                   name: segredo
