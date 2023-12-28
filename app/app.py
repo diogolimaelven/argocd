@@ -1,28 +1,28 @@
 from flask import Flask, render_template, request
 from prometheus_flask_exporter import PrometheusMetrics
-from elasticapm.contrib.flask import ElasticAPM
+# from elasticapm.contrib.flask import ElasticAPM
 
 import os
 
 app = Flask(__name__)
-apm = ElasticAPM(app)
+# apm = ElasticAPM(app)
 metrics = PrometheusMetrics(app)
-app.config['ELASTIC_APM'] = {
-  # Set the required service name. Allowed characters:
-  # a-z, A-Z, 0-9, -, _, and space
-  #'SERVICE_NAME': 'my-service-name',
+# app.config['ELASTIC_APM'] = {
+#   # Set the required service name. Allowed characters:
+#   # a-z, A-Z, 0-9, -, _, and space
+#   #'SERVICE_NAME': 'my-service-name',
 
-  # Use if APM Server requires a secret token
-  'SECRET_TOKEN': '',
+#   # Use if APM Server requires a secret token
+#   'SECRET_TOKEN': '',
 
-  # Set the custom APM Server URL (default: http://localhost:8200)
-  'SERVER_URL': 'http://localhost:8200',
+#   # Set the custom APM Server URL (default: http://localhost:8200)
+#   'SERVER_URL': 'http://localhost:8200',
 
-  # Set the service environment
-  'ENVIRONMENT': 'my-environment',
-}
+#   # Set the service environment
+#   'ENVIRONMENT': 'my-environment',
+# }
 
-apm = ElasticAPM(app)
+# apm = ElasticAPM(app)
 
 
 @app.route("/")
