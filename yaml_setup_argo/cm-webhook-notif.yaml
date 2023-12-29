@@ -1,0 +1,28 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: argocd-notifications-cm
+  namespace: argocd
+data:
+  context: |
+    argocdUrl: https://localhost:8080
+  service.webhook.webhook: |
+    url:<Webhook Discrod>
+    headers:
+    - name: Content-Type
+      value: application/json
+
+  template.app-sync-succeeded: |
+    webhook:
+      webhook:
+        method: POST
+        body: |
+          {
+            "content": "valeu falou"
+          }
+
+  trigger.on-sync-succeeded: |
+    - description: Application syncing has succeeded
+      send:
+      - app-sync-succeeded
+      when: app.status.operationState.phase in ['Succeeded']
